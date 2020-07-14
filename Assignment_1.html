@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Assignment-1</title>
+    </head>
+    <body>
+    <h2>Question-1 : Write a JS Program to display the current day and time in the following format</h2>
+                <div id="tday"></div>
+                <div id="result"></div>
+    <h2>Question-2 : Write a JS Program to print the content of current window.</h2>
+                <div id="tday"></div>
+                <div id="result"></div>
+                <button type="button" onclick="window.print()">To Print Current Day and Time.</button>
+    <h2>Question-3 : Write a JS Program to get Current date.</h2>
+                <div id="formatresult"></div>
+
+         <script>
+            var now = new Date();
+            now.setHours(now.getHours());
+            var isPM = now.getHours() >= 12;
+            var isMidday = now.getHours() == 12;
+            var tday=now.getDay();
+            var time = [now.getHours() - (isPM && !isMidday ? 12 : 0)+(isPM ? 'PM' : 'AM'), now.getMinutes(), now.getSeconds() || '00'].join(':') ;
+            var dayArr = ['Sunday','Monday','Tuesday','Wednesday','Thrusday','Firday','Saturday']
+            console.log(dayArr[tday]);
+            document.querySelector('#tday').innerHTML = '<b>Today is : </b>'+dayArr[tday];
+            document.querySelector('#result').innerHTML = '<b>Current time is : </b>'+ time;
+            var wholeStr = document.querySelector('#formatresult').innerHTML;
+            wholeStr = '<b>Format 1 :  </b>'+("0" + now.getMonth()).slice(-2)+'-'+now.getDate()+'-'+now.getFullYear();
+            wholeStr = wholeStr+'<br><b>Format 2 :  </b>'+("0" +now.getMonth()).slice(-2)+'/'+now.getDate()+'/'+now.getFullYear();
+            wholeStr = wholeStr+'<br><b>Format 3 :  </b>'+("0" + now.getDate()).slice(-2)+'-'+ now.getMonth()+'-'+now.getFullYear();
+            wholeStr = wholeStr+'<br><b>Format 4 :  </b>'+("0" +now.getDate()).slice(-2)+'/'+ now.getMonth()+'/'+now.getFullYear();
+            console.log(wholeStr);
+            document.querySelector('#formatresult').innerHTML=wholeStr;
+        </script>
+    </body>
+</html>
