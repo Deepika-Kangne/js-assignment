@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Assignemnt-2</title>
+    </head>
+    <body>
+    <h2>Question-1 :Explore and explain the various methods in console function</h2>
+    <!-- 1 .console.assert():Log a message and stack trace to console if the first argument is false. -->
+        <h5>1.console.assert() : Log a message and stack trace to console if the first argument is false.</h5>
+         <script>console.assert(5 % 2 === 0, {number: 5, errorMsg: "EVEN"});</script>
+    <!-- console.clear() Clear the console. -->
+        <h5>2.console.clear() : Clear the console.</h5>
+        <script>console.clear();</script>
+    <!-- console.count() Log the number of times this line has been called with the given label. -->
+        <h5>3.console.count() : Log the number of times this line has been called with the given label.</h5>
+    <!-- console.countReset() Resets the value of the counter with the given label. -->
+        <h5>4.console.countReset() : Resets the value of the counter with the given label.</h5>
+        <script>
+            let user = "";
+            function greet() {
+            console.count();
+            return "hi " + user;
+            }
+            user = "bob";
+            greet();
+            console.count();/////console.count()
+            console.countReset();////countReset()
+            user = "alice";
+            greet();
+            greet();
+            console.count();
+        </script>
+    <!-- console.log() For general output of logging information. You may use string substitution and additional arguments with this method. -->
+        <h5>5.console.log() : For general output of logging information. You may use string substitution and additional arguments with this method.</h5>
+        <script>console.log("Example of log")</script>
+    <!-- console.error() : Outputs an error message. You may use string substitution and additional arguments with this method. -->
+        <h5>6.console.error() : Outputs an error message. You may use string substitution and additional arguments with this method.</h5>
+        <script>console.error("This is example of Error")</script>
+    <!-- console.info() Informative logging of information. You may use string substitution and additional arguments with this method. -->
+        <h5>7.console.info() : Informative logging of information. You may use string substitution and additional arguments with this method.</h5>
+        <script>console.info("this is example of Information")</script>
+    <!-- console.time() : Starts a timer with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page. -->
+        <h5>8.console.time() : Starts a timer with a name specified as an input parameter. Up to 10,000 simultaneous timers can run on a given page.</h5>
+        <script>console.time();</script>
+    <!-- console.timeEnd() Stops the specified timer and logs the elapsed time in seconds since it started. -->
+        <h5>9.console.timeEnd() : Stops the specified timer and logs the elapsed time in seconds since it started.</h5>
+        <script>console.timeEnd();</script>
+    <!-- console.table():Displays tabular data as a table. -->
+       <h5>10.console.table() : Displays tabular data as a table.</h5>
+        <script>console.table(["apples", "oranges", "bananas"]);</script>
+
+    <h2>Question-2 :What is difference between var,let and const</h2>
+        <h5> 1. var : var is a golbal signal available when you define a variable in JS,But when it is assigned insidde a function it not be accesiable.</h5>
+        <script>
+            var tester = "hey hi";
+            function newFunction() {
+                var hello = "hello";
+            }
+            console.log(hello); // error: hello is not defined
+        </script>
+        <h5>2.let : is a signal that the variable may be reassigned,such as a counter in loop,or a value swap in an algorithm.also signals that the variable will be used only in the in the block its defined in,which is not always the entire containing function.</h5>
+        <script>
+             let greeting = "say Hi";
+             let times = 4;
+
+            if (times > 3) {
+                    let hello = "say Hello instead";
+                    console.log(hello);// "say Hello instead"
+                }
+            console.log(hello) // hello is not defined
+        </script>
+        <h5>3.const :is a signal that the variables declared with the const maintain constant values. const declarations share some similarities with let declarations. </h5>
+        <script>
+            const greeting = "say Hi";
+            console.log(greeting);
+        </script>
+    <h2>Question-3 :Write a brief intro on available Datatypes?</h2>
+    <h5>Datatypes:JavaScript variables can hold many data types: numbers, strings, objects and more:</h5>
+    <script>
+        var length = 16;                               // Number
+        document.querySelector('#number').innerHTML = length;
+        var lastName = "Johnson";                      // String
+        document.querySelector('#string').innerHTML = lastName;
+        var x = {firstName:"John", lastName:"Doe"};    // Object
+        document.querySelector('#obj').innerHTML = x;
+        var xval=true;                                    // Boolean
+        document.querySelector('#obj').innerHTML = xval;
+        var cars = ["Saab", "Volvo", "BMW"];            //Arrays
+        document.querySelector('#arr').innerHTML = cars;
+    </script>
+        <h5>Number : JavaScript has only one type of numbers.Numbers can be written with, or without decimals:</h5>
+          <p id="number"></p>
+        <h5>String : JavaScript has only one type of String.Strings are written with quotes. You can use single or double quotes:</h5>
+          <p id="string"></p>
+        <h5>Object : JavaScript has only one type of Object.Object properties are written as name:value pairs, separated by commas.</h5>
+          <p id="obj"></p>
+        <h5>Boolean : JavaScript has only one type of Boolean.Booleans can only have two values: true or false.</h5>
+          <p id="obj"></p>
+        <h5>Array : JavaScript has only one type of Array.Array items are separated by commas.</h5>
+          <p id="arr"></p>
+    </body>
+</html>
