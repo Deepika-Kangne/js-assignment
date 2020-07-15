@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Assignment-1</title>
+    </head>
+    <body>
+    <h2>Question-1 : Write a JS Program which takes input from user and logs in it in console.</h2>
+                <div id="name"></div>
+    <h2>Question-2 : Explain with examples the remaining Methods of Strings and Arrays?</h2>
+                <h4>[A].Strings Methods</h4>
+                <p>1.split():A string can be converted to an array with the split() method</p>
+                 <script>
+                    var txt = "a,b,c,d,e";   // String
+                    txt.split(",");
+                </script>
+                 <p>2.subString():substring() is similar to slice().The difference is that substring() cannot accept negative indexes.</p>
+                 <script>
+                    var str = "Apple, Banana, Kiwi";
+                    var res = str.substring(7, 13); //Banana
+                </script>
+                <p>3.replaceAll():The replaceAll() method returns a new string with all matches of a pattern replaced by a replacement.</p>
+                <script>
+                   var str = "Apple, Banana, Kiwi,Banana";
+                   var res = str.replaceAll('Banana','Mongo'); //"Apple, Mongo, Kiwi,Mongo"
+               </script>
+               <p>4.replace():The replaceAll() method returns a new string replaces only the first match of a pattern replaced by a replacement.</p>
+               <script>
+                  var str = "Apple, Banana, Kiwi,Banana";
+                  var res = str.replaceAll('Banana','Mongo'); //"Apple, Mongo, Kiwi,Banana"
+              </script>
+              <p>5.trim():The trim() method removes whitespace from both sides of a string.</p>
+              <script>
+                 var str = "       Hello World!        ";
+                 console.log(str.trim()); //"Hello World!"
+             </script>
+               <h4>[B].Array Methods</h4>
+                <p>1.toString() : converts an array to a string of (comma separated) array values.</p>
+                <script>
+                    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                   fruits.toString(); //Banana,Orange,Apple,Mango
+                </script>
+                <p>2. join() : method also joins all array elements into a string.</p>
+                <script>
+                    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                    fruits.join(" * "); //Banana * Orange * Apple * Mango
+                </script>
+                <p>3. pop() : method returns the value that was "popped out".</p>
+                <script>
+                    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                    var x = fruits.pop();      // the value of x is "Mango"
+                </script>
+                <p>4.push() : method adds a new element to an array (at the end).</p>
+                <script>
+                    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                    fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+                </script>
+                 <p>5.splice() : method can be used to add new items to an array.</p>
+                 <script>
+                    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                    fruits.splice(2, 0, "Lemon", "Kiwi");
+                 </script>
+             <h2>Question-3 : Ask the User if he is 21+ and log the value "Can Drink" or "Cannot Drink".</h2>
+                 <div id="result"></div>
+
+         <script>
+            var name = prompt("Please Enter your Name","User Name")
+            console.log(name);
+            var welcomeStr = `Welcome..!!${name}`;
+            document.querySelector('#name').innerHTML = welcomeStr;
+
+            var age = prompt("Please Enter your Your Age","User Name")
+            if(Number(age)>21){
+                console.log("Can Drink");
+                document.querySelector('#result').innerHTML = name+" you Can Drink";
+            }else{
+                console.log("Cannot Drink");
+                document.querySelector('#result').innerHTML = name+" youCannot Drink";
+            }
+        </script>
+    </body>
+</html>
