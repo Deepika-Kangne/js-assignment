@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title>Assignment-4</title>
+        <style>
+            input[type="button"]
+            {
+            width:100%;
+            }
+            input[type="text"]
+            {
+            text-align: right;
+            width:100%
+            }
+        </style>
+             
+    </head>
+    <body>
+    <h2>Question-1 : Create a for loop that iterates up to 100 while outputting "fizz" at multiples of 3,"buzz" at multiples of 5 and "fizzbuzz" at multiples of 3 and 5</h2>
+                <div id="numberRes"></div>
+    <h2>Question-2 : Destructure the following Objet.</h2>
+                <div id="versionRes"></div>
+    <h2>Question-3 : Shopping-List Question.</h2>
+                <div id="prevList"></div>   
+                <div id="newList"></div> 
+    <h2>Question-4:Calculator</h2>
+            <table border="1">
+                <tr>
+                    <td><input type="button" value="c" onclick="clr()"/> </td>
+                    <td colspan="3"><input type="text" id="edu"/></td>
+                    <!-- clr() function will call clr to clear all value -->
+                </tr>
+                <tr>
+                    <!-- creating buttons and assigning values-->
+                    <td><input type="button" value="+" onclick="dis('+')"/> </td>
+                    <td><input type="button" value="1" onclick="dis('1')"/> </td>
+                    <td><input type="button" value="2" onclick="dis('2')"/> </td>
+                    <td><input type="button" value="3" onclick="dis('3')"/> </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="-" onclick="dis('-')"/> </td>
+                    <td><input type="button" value="4" onclick="dis('4')"/> </td>
+                    <td><input type="button" value="5" onclick="dis('5')"/> </td>
+                    <td><input type="button" value="6" onclick="dis('6')"/> </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="*" onclick="dis('*')"/> </td>
+                    <td><input type="button" value="7" onclick="dis('7')"/> </td>
+                    <td><input type="button" value="8" onclick="dis('8')"/> </td>
+                    <td><input type="button" value="9" onclick="dis('9')"/> </td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="/" onclick="dis('/')"/> </td>
+                    <td><input type="button" value="." onclick="dis('.')"/> </td>
+                    <td><input type="button" value="0" onclick="dis('0')"/> </td>
+                    <!-- Evaluating function call eval()-->
+                    <td><input type="button" value="=" onclick="solve()"/> </td>
+                </tr>
+            </table>
+        
+    <h2>Question-5: Sales Department</h2>
+    <h2>Question-6</h2>
+            <div id="ans6"></div>
+    <h2>Question-7</h2>
+            <div id="ans7"></div>
+    <h2>Question-8</h2>
+            <div id="ans8"></div>
+
+
+    <script>
+        
+        ///////////////////////////////Question-1/////////////////////////
+        fizbiz_Arr =[];
+        for(var i=0;i<100;i++){
+            if(i%3==0 && i%5==0)
+            {
+                console.log('fizzbuzz');
+                fizbiz_Arr.push('fizzbuzz');
+            }else if(i%5==0)
+            {
+                console.log('buzz');
+                fizbiz_Arr.push('buzz');
+            }else if(i%3==0)
+            {
+                console.log('fizz');
+                fizbiz_Arr.push('fizz');
+            }else{
+                continue;
+            }
+        }
+        document.querySelector('#numberRes').innerHTML = fizbiz_Arr.toString();
+
+        ///////////////////////////////Question-2/////////////////////////
+
+        const student = {
+            name:"Helsinki",
+            age:24,
+            projects:{
+                diceGame:"Two player dice game using javaScript"
+            }
+        }
+        ////////////////////////////////Question-3////////////////////////
+
+        shopping_List = ['Apple','Mango','Bread'];
+        document.querySelector('#prevList').innerHTML = shopping_List.toString();
+        basket_list = [...shopping_List];
+        new_item = prompt("Add new Item ");
+        basket_list.push(new_item);
+        document.querySelector('#newList').innerHTML = basket_list.toString();
+
+
+
+        ////////////////////////////////Question-4///////////////////////
+        function dis(val)
+        {
+        document.getElementById("edu").value+=val
+        }
+        //function for evaluation
+        function solve()
+        {
+        let x = document.getElementById("edu").value
+        let y = eval(x)
+        document.getElementById("edu").value = y
+        }
+        //function for clearing the display
+        function clr()
+        {
+        document.getElementById("edu").value = ""
+        }
+        //////////////////////////////Question-5/////////////////////
+        salesCount = parseInt(prompt("Enter Amt of Sale done:","sales"));
+        commCount = 0;
+        while(salesCount>0)
+        {
+            if(salesCount>5000)
+            {
+                commCount = commCount+(5000*(2/100));
+                salesCount = salesCount-5000;
+            }else if(salesCount>5001&&salesCount<10000)
+            {
+                commCount = commCount+(10000*(5/100));
+                salesCount = salesCount-10000;
+            }else if(salesCount>10001&&salesCount<20000)
+            {
+                commCount = commCount+(20000*(7/100));
+                salesCount = salesCount-20000;
+            }else if(salesCount>20000)
+            {
+                commCount = commCount+(salesCount*(7/100));
+                salesCount = salesCount-salesCount;
+            }
+            else{
+                commCount =0;
+                salesCount =0;
+
+            }
+        }
+        console.log(commCount);
+
+        //////////////////////////////Question-6/////////////////////
+        num = parseInt(prompt("Enter n number greater than 100:","n"));
+        while(num<100)
+        {
+            alert("Number should be Greater than 100")
+            num = parseInt(prompt("Enter n number greater than 100:","n"));
+        }
+        alert(`Thanks ${num}`);
+        document.querySelector('#ans6').innerHTML = `Thanks ${num}`;
+        //////////////////////////////Question-7/////////////////////
+        num_till = prompt("Enter n number:","n");
+        prime_Arr =[];
+
+        for(var i=1;i<=num_till;i++)
+            {
+                var flag =1;
+                for(var j=2;j<i;j++)
+                {
+                    if(i%j==0)
+                    {
+                     flag=0;
+                     break;   
+                    }
+                }
+
+                if(flag==1){
+                    prime_Arr.push(i);
+                }
+
+            }
+            console.log(prime_Arr);
+        document.querySelector('#ans7').innerHTML = prime_Arr.toString();
+        ///////////////////////////////Question-8////////////////////
+        function ask(question, yes, no) {
+            if (confirm(question)) yes()
+            else no();
+        }
+  
+        ask(
+            "Do you agree?",
+            () => alert("You agreed."),
+            () => alert("You canceled the execution.")
+        );
+
+
+
+
+    </script>     
+    </body>
+</html>
