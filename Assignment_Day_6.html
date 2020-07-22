@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Assignment-Day-5</title>
+        <style>
+           .dark-mode {
+            background-color: black;
+            color: white;
+            }
+            body {
+            padding: 25px;
+            background-color: white;
+            color: black;
+            font-size: 25px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <h2>Question-1 :WAP that will iterate over an array of colors and change the background of the page after 5 seconds.</h2>
+    <h2>Question-2 :WAP that will display the multiplication table of a number on the webpage in the proper format.Take the input from the user</h2>
+        <div id="getmul"></div>
+    <h2>Question-3 :WAP for User webpage.</h2>
+        <div id="myDIV"> </div>
+
+            
+
+         <script>
+            ////////////////////////////////Question -1//////////////////////////////////////////////////////
+          
+                let colors = ['skyblue','orange','blue','pink','purple'];
+                var i=0;
+                setInterval(
+                    function () {
+                        if(i>colors.length){
+                            i=0;
+                        }
+                        var randomColor = colors[i];
+                        document.body.style.backgroundColor = randomColor;
+                        i++;
+                    },5000);
+
+            ////////////////////////////////Question-2/////////////////////////////////////////////////////////
+                let num = parseInt(prompt("Enter the number to get its Multiplications","Eg.5"));
+                var i =1;
+                var mul = '';
+                while(i<=10){
+                    mul += `${num} X ${i} = ${num*i} <br>`;
+                    i++;
+                }
+                document.querySelector('#getmul').innerHTML=mul;
+        ///////////////////////////////////////Question -3 /////////////////////////////////////////////////////
+                let name = prompt("Enter the Your Name ","Eg.Ankita Shirodkar");
+                if(name!='')
+                {
+                    name_Str = `Welcome ${name}`;
+                    var element = document.body;
+                    element.classList.toggle('dark-mode');
+                }
+                else{
+                    alert("please Enter your Name")
+                }
+                document.querySelector('#myDIV').innerHTML=name_Str;
+                
+        
+        </script>
+    </body>
+</html>
